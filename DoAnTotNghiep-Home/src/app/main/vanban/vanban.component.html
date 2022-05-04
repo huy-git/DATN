@@ -1,0 +1,58 @@
+
+        <section class="breadcrumb_area">
+            <div class="breadcrumb_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="breadcrumb_title section-padding">
+                            <h2>Công Văn Sở</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb_bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="breadcrumb_nav">
+                            <div class="col-sm-5">
+                                <h2>Công Văn Sở</h2>
+                            </div>
+                            <div class="col-sm-7">
+                                <ul>
+                                    <li><a [routerLink]="['/']">Trang Chủ</a></li>
+                                    <li>Công Văn Sở</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+        <section class="our_courses_area section-padding course-page">
+            <div class="container">
+                <div class="row all_our_courses">
+                  <ng-container *ngFor="let it of list_lop">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single_our_course">
+                            <div class="sing_course_thumb">
+                                <img src="assets/img/{{it.hinhAnh}}" alt="">
+                            </div>
+                            <div class="sing_course_txt">
+                                <img src="assets/img/" alt="" class="course_icon">
+                                <!-- <h2>Political Science</h2> -->
+                                <h2>{{catText(it.tieuDe, 50)}}</h2>
+                                <p>{{catText(it.noiDung, 140)}}</p>
+                                <a [routerLink]="['/ct-tintuc',it.maTin]">Chi Tiet <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                  </ng-container>
+                </div>
+                <div class="row">
+                    <div class="view_all_course">
+                        <a href="#" class="rm_btn">view all courses</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+  

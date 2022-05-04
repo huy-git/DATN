@@ -1,0 +1,119 @@
+ <section>
+    <div class="container tin-chinh blog" style="background-color: #fff;">
+       <div class="col-sm-12 col-xs-12 tieu-de-blog">
+          <h2 style="margin-bottom: 0"><a [routerLink]="['/']">Trang chủ</a> / 
+             <a [routerLink]="['/blog']"> Diễn đàn</a> /
+             {{item.tieuDe}}
+          </h2>
+       </div>
+       <div class="col-sm-12 col-xs-12" style="padding:0">
+          <div class="col-sm-9 col-xs-12 bai-viet" style="border-right: 1px solid #eee">
+             <h2 style="margin-top: 0">{{item.tieuDe}}</h2>
+             <p>Posted By :{{item.maTK}}</p>
+            <p>Ngày đăng: {{item.thoiGian| date:'dd-MM-yyyy' }}</p>
+             <hr>
+             <div class="content">
+                <p>{{item.noiDung}}</p>
+             </div>
+             <div class="featured-images text-center">
+                <p>
+                    <img src="assets/img/{{item.hinhAnh}}" alt="{{item.tieuDe}}">
+                </p>
+             </div>
+             <div class="col-sm-12 col-xs-12">
+                <div class="col-sm-12 col-xs-12" style="padding:0">
+                    <div class="col-sm-12 col-xs-12 tieu-de2" style="padding:5px 10px 15px">
+                       <h2><a href="tin-tuc.html">Bình luận</a></h2>
+                       <div style="width: 100%;height: 1px;background-color: #1c356e"></div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 tong-tin" style="padding-left:15px">
+                        <ng-container *ngFor="let bl of binhluans1">
+                            <ng-container *ngIf="bl.trangThai=='duyệt'">
+                                <div class="row" style="padding:10px 0">
+                                        <div class="col-xs-2">
+                                            <div style="width:70px;height:50px;background-color:rgba(100,100,100,0.1);text-align:center;border-radius: 3px;">
+                                                <img src="assets/img/avatar.gif" style="width:70px;height:50px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <p class="max-lines3"><b>{{bl.hoTen}}</b></p>
+                                            <p class="max-lines3">{{bl.noiDung}}</p>
+                                            <p class="info">
+                                                <i class="glyphicon glyphicon-time"></i>{{bl.thoiGian| date:'dd-MM-yyyy' }}
+                                             </p>
+                                        </div>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                        <div class="col-sm-12 col-xs-12 text-center" style="padding:0;margin-top:5%">
+                            <ngb-pagination [collectionSize]="totalRecords" [pageSize]="pageSize" [(page)]="page" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+                         </div>
+                    </div>
+                 </div>
+                <div class="form-group">
+                  <h2>BÌNH LUẬN </h2>
+                  <form [formGroup]="formbinhluan" (ngSubmit)="ThemBinhLuan()" class="form-horizontal">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <textarea formControlName="binhluan" cols="60" rows="3" placeholder="Message"></textarea>
+                          </div>
+                      </div>
+                      <button class="btn btn-success">Gửi bình luận</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <app-newfet></app-newfet>
+        </div>  
+    </div>
+</section>
+
+<div  id="createLoginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog full-height-modal">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h4 class="modal-title">Đăng nhập</h4>
+          </div>
+          <form *ngIf="doneSetupForm" [formGroup]="formLogin"  (ngSubmit)="onSubmit(formLogin.value)" class="form-horizontal">
+              <div class="card">
+                  <div class="card-body" style="margin-top: 10px;">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Tên tài khoản (*):</label>
+                        <div class="col-sm-8">
+                            <input type="text" formControlName="username" placeholder="Tên tài khoản" class="form-control">
+                        </div>
+                    </div>
+                    <div *ngIf=" submitted && f.username.errors" class="row invalid-feedback" style="margin-top: 0;">
+                        <div class="col-sm-3"></div>
+                        <div *ngIf="f.username.errors.required" class="col-sm-8">Chưa nhập tài khoản!</div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Mật khẩu (*):</label>
+                        <div class="col-sm-8">
+                            <input type="password" formControlName="password" placeholder="Mật khẩu" class="form-control">
+                        </div>
+                    </div>
+                    <div *ngIf="submitted && f.password.errors" class="row invalid-feedback">
+                        <div class="col-sm-3"></div>
+                        <div *ngIf="f.password.errors.required" class="col-sm-9">Chưa nhập mật khẩu!</div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="clearfix">
+                            <div class="col-sm-6" style="margin-left: 16%;">
+                                <button type="submit" class="btn btn-success">Đăng Nhập</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register-link m-t-15 text-center" >
+                            <p style="color: black;">Bạn chưa có tài khoản ? <a [routerLink]="['/dang-ky']"> Đăng ký tại đây</a></p>
+                    </div>
+                </div>
+            </div>
+          </form>
+       </div>
+    </div>
+ </div>
+
+
+
+

@@ -1,0 +1,45 @@
+<section>
+    <div class="container tin-chinh blog" style="background-color: #fff;">
+        <div class="col-sm-12 col-xs-12 tieu-de-blog">
+            <h2><a [routerLink]="['/']">Trang chủ</a> / Thời khoá biểu / Chi tiết thời khoá biểu lớp {{lop}} </h2>
+        </div>
+        <div class="col-sm-12 col-xs-12" style="padding:0">
+            <div class="col-sm-9 col-xs-12 bai-viet" style="border-right: 1px solid #eee">
+                <h2 style="margin-top: 0">Chi tiết thời khoá biểu lớp {{lop}}</h2>
+                <hr>
+                <div class="content">
+                    <h4>Thời gian bắt đầu học:</h4>
+                    <h4>- Buổi sáng: 7h15'</h4>
+                    <h4>- Buổi chiều: 13h00'</h4>
+                    <table class="table table-bordered text-center mb-4">
+                    <thead>
+                        <tr >
+                            <th style="text-align: center !important;">TIẾT</th>
+                            <th style="text-align: center !important;">Thứ 2</th>
+                            <th style="text-align: center !important;">Thứ 3</th>
+                            <th style="text-align: center !important;">Thứ 4</th>
+                            <th style="text-align: center !important;">Thứ 5</th>
+                            <th style="text-align: center !important;">Thứ 6</th>
+                            <th style="text-align: center !important;">Thứ 7</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let t of tiets">
+                            <td>{{t}}</td>
+                            <ng-container *ngFor="let mon of list_tkb">
+                                <ng-container *ngIf="mon.tietDay== t">
+                                <td>{{mon.tenMon}}</td>
+                                </ng-container>
+                            </ng-container>
+                            <ng-container *ngIf="t=='5'">
+                                <td></td>
+                            </ng-container>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+            <app-newfet></app-newfet>
+        </div>
+    </div>
+</section>

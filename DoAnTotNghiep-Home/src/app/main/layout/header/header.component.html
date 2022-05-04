@@ -1,0 +1,125 @@
+<header>
+    <div class="container" style="margin: 30px auto;overflow: hidden;">
+       <div class="row">
+          <div class="col-md-12 logo">
+             <h1 style="margin:0">
+                <a class="navbar-brand" [routerLink]="['/']">
+                <img title="Trường THPT Trưng Vương" width="120px" height="120px" src="assets/img/Mask Group.jpg" alt="logo Trường THPT Trưng Vương" style="max-width: 100%">
+                </a>
+             </h1>
+             <h4 style="letter-spacing: 3px;">Cổng thông tin điện tử</h4>
+             <h3 style="text-transform: uppercase;letter-spacing: 5px;margin-top: 15px;"><b>Trường THPT Trưng Vương</b></h3>
+             <h5 style="letter-spacing: 2px;line-height: 20px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Huyện Văn Lâm, Tỉnh Hưng Yên</b></h5>
+          </div>
+       </div>
+    </div>
+    <!--  -->
+    <!-- menu -->
+    <div class="container top">
+       <nav class="navbar navbar-default">
+          <div class="container-fluid">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+             </div>
+             <div class="collapse navbar-collapse" id="myNavbar" >
+                <ul class="nav navbar-nav navbar-left" >
+                   <li><a [routerLink]="['/']">Trang chủ</a></li>
+                   <li><a [routerLink]="['/gioi-thieu']">Giới thiệu </a></li>
+                   <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown">Cơ cấu tổ chức <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                         <li><a [routerLink]="['/ban-giam-hieu']">Ban giám hiệu</a></li>
+                         <li><a [routerLink]="['/bch-cong-doan']">BCH Công đoàn</a></li>
+                      </ul>
+                   </li>
+                   <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" >Tin tức <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                         <li><a [routerLink]="['/tin-tuc',1]">Tin nhà trường</a></li>
+                         <li><a [routerLink]="['/tin-tuc',2]">Tin sở GD</a></li>
+                         <li><a [routerLink]="['/tin-tuc',3]">Thông báo</a></li>
+                      </ul>
+                   </li>
+                   <li><a [routerLink]="['/blog']">Diễn đàn</a></li>
+                   <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown">Thời khoá biểu <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a [routerLink]="['/thoi-khoa-bieu']">Thời khoá biểu theo lớp</a></li>
+                        <li><a [routerLink]="['/thoi-gian-tiet-hoc']">Thời gian các tiết học tại trường</a></li>
+                     </ul>
+                  </li>
+                   <li><a [routerLink]="['/lien-he']">Liên hệ</a></li>
+                   <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown">Tài khoản<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <ng-container *ngIf="!user">
+                           <li><a (click)="createModal()">Đăng nhập</a></li>
+                        </ng-container>
+                        <ng-container *ngIf="user">
+                           <li><a [routerLink]="['/quan-ly-blog']">Quản lý bài viết</a></li>
+                           <li><a (click)="logout()">Đăng xuất</a></li>
+                        </ng-container>
+                     </ul>
+                  </li>
+                </ul>
+             </div>
+          </div>
+       </nav>
+    </div>
+    <!-- end menu -->
+ </header>
+
+
+ <div  id="createUserModal" class="modal fade" role="dialog">
+   <div class="modal-dialog full-height-modal">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Đăng nhập</h4>
+         </div>
+         <form *ngIf="doneSetupForm" [formGroup]="formdata"  (ngSubmit)="onSubmit(formdata.value)" class="form-horizontal">
+             <div class="card">
+                 <div class="card-body" style="margin-top: 10px;">
+                   <div class="row form-group">
+                       <label class="control-label col-sm-3">Tên tài khoản (*):</label>
+                       <div class="col-sm-8">
+                           <input type="text" formControlName="username" placeholder="Tên tài khoản" class="form-control">
+                       </div>
+                   </div>
+                   <div *ngIf=" submitted && f.username.errors" class="row invalid-feedback" style="margin-top: 0; color: red;">
+                       <div class="col-sm-3"></div>
+                       <div *ngIf="f.username.errors.required" class="col-sm-8">Chưa nhập tài khoản!</div>
+                   </div>
+                   <div class="row form-group">
+                       <label class="control-label col-sm-3">Mật khẩu (*):</label>
+                       <div class="col-sm-8">
+                           <input type="password" formControlName="password" placeholder="Mật khẩu" class="form-control">
+                       </div>
+                   </div>
+                   <div *ngIf="submitted && f.password.errors" class="row invalid-feedback"  style="color: red;">
+                       <div class="col-sm-3"></div>
+                       <div *ngIf="f.password.errors.required" class="col-sm-9">Chưa nhập mật khẩu!</div>
+                   </div>
+                   <div *ngIf="submitted && isChecked" class="row invalid-feedback" style="color: red;">
+                     <div class="col-sm-3"></div>
+                     <div *ngIf="isChecked" class="col-sm-9">Tài khoản hoặc mật khẩu không đúng!</div>
+                 </div>
+                   <div class="row form-group">
+                       <div class="clearfix">
+                           <div class="col-sm-6" style="margin-left: 16%;">
+                               <button type="submit" class="btn btn-success">Đăng Nhập</button>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="register-link m-t-15 text-center" >
+                           <p style="color: black;">Bạn chưa có tài khoản ? <a [routerLink]="['/dang-ky']"> Đăng ký tại đây</a></p>
+                   </div>
+               </div>
+           </div>
+         </form>
+      </div>
+   </div>
+</div>

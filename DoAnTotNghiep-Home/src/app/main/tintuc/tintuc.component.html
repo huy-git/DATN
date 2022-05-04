@@ -1,0 +1,31 @@
+<section>
+    <div class="container tin-chinh blog" style="background-color: #fff;">
+       <div class="col-sm-12 col-xs-12 tieu-de-blog">
+          <h2><a [routerLink]="['/']">Trang chủ</a> / Tin tức</h2>
+       </div>
+       <div class="col-sm-9 col-xs-12" style="padding:0">
+          <ng-container *ngFor="let it of tintucs">
+             <div class="col-sm-12 col-xs-12 -in-tt">
+                <div class="col-sm-4" style="padding:0">
+                   <a [routerLink]="['/chi-tiet-tin-tuc',it.maTin]" title="{{catText(it.tieuDe, 50)}}" style="width: 277.48px; height: 208.11px;"><img src="assets/img/{{it.hinhAnh}}" style="width: 100%;"></a>
+                </div>
+                <div class="col-sm-8">
+                   <div class="col-sm-12" style="padding:0">
+                      <h3 class="max-lines2"><a [routerLink]="['/chi-tiet-tin-tuc',it.maTin]">{{catText(it.tieuDe, 100)}}</a></h3>
+                   </div>
+                   <div class="col-sm-12 admin" style="padding:0">
+                      <p class="info">
+                         <i class="glyphicon glyphicon-time"></i>{{ it.thoiGian| date:'dd-MM-yyyy'  }}
+                      </p>
+                   </div>
+                   <a [routerLink]="['/chi-tiet-tin-tuc',it.maTin]" class="btn btn-info">Chi tiết  &#187;</a>
+                </div>
+             </div>
+          </ng-container>
+       </div>
+       <app-newfet></app-newfet>
+       <div class="col-sm-12 col-xs-12 text-center" style="padding:0;margin-top:5%">
+          <ngb-pagination [collectionSize]="totalRecords" [pageSize]="pageSize" [(page)]="page" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+       </div>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+<div class="col-sm-3 col-xs-12 right-post">
+    <div class="col-sm-12 col-xs-12" style="padding:0">
+       <form [formGroup]="formdata"  (ngSubmit)="onSubmit(formdata.value)">
+         <div class="col-sm-12 col-xs-12 new-fet" style="padding:0">
+            <h4>Tìm kiếm tin tức</h4>
+         </div>
+          <div class="input-group">
+             <input type="text" class="form-control" placeholder="Tìm kiếm..." formControlName="search">
+             <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                <i class="fa fa-search"></i>
+                </button>
+             </div>
+          </div>
+          <div *ngIf=" submitted && f.search.errors" class="input-group" style="color: red;">
+            <div class="col-sm-3"></div>
+            <div *ngIf="f.search.errors.required" class="col-sm-8">Chưa nhập dữ liệu!</div>
+        </div>
+       </form>
+    </div>
+    <div class="col-sm-12 col-xs-12 new-fet" style="padding:0">
+      <h4>Bài viết mới</h4>
+      <ng-container *ngFor="let bv of listBaiViet">
+          <p class="link"><a [routerLink]="['/ctblog',bv.maBaiViet]"><i class="fa fa-angle-double-right"></i>{{bv.tieuDe}}</a></p>
+      </ng-container>
+    </div>
+    <div class="col-sm-12 col-xs-12 new-fet" style="padding:0">
+       <h4>Sự kiện</h4>
+       <ng-container *ngFor="let tt of listTinTuc">
+          <p class="link"><a [routerLink]="['/chi-tiet-tin-tuc',tt.maTin]"><i class="fa fa-angle-double-right"></i>{{tt.tieuDe}}</a></p>
+      </ng-container>
+    </div>
+ </div>

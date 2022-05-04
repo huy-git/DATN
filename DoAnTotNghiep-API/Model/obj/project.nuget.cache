@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "0asiS19I557WpNDULiQDNatmJEubTiVvGCDIl4rOk9NtohbYkA7vDbqd8U0N6Eo4Dl62BaO8IGmCSAKLnEFh/Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lostl\\OneDrive\\Documents\\DATN\\DATN\\DoAnTotNghiep-API\\Model\\Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lostl\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.9\\microsoft.aspnetcore.jsonpatch.3.1.9.nupkg.sha512",
+    "C:\\Users\\lostl\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.9\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.9.nupkg.sha512",
+    "C:\\Users\\lostl\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\lostl\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\lostl\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

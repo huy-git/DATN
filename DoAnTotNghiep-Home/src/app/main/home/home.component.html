@@ -1,0 +1,607 @@
+<section>
+    <style type="text/css" media="screen">#lang{display: block !important;}.top{margin-top: 2vh !important;} </style>
+    <div class="container tin-chinh" style="background-color: #fff; padding-top: 0 !important;">
+          <div class="keen-slider"
+          #sliderRef
+           style="padding-top: 10px;">
+             <div class="keen-slider__slide">
+                <div class="item" >
+                   <div class="box_item">
+                      <a href=""><img src="assets/storage/app/uploads/public/3d3/64e/f8f/thumb__1350_330_0_0_exact.jpg"></a>
+                      <div class="title">
+                         <h4><a href=""> Trường THPT Trưng Vương</a></h4>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="keen-slider__slide">
+                <div class="item">
+                   <div class="box_item">
+                      <a href=""><img src="assets/storage/app/uploads/public/3d3/64e/f8f/thumb__1350_330_0_0_exact.jpg"></a>
+                      <div class="title">
+                         <h4><a href=""> 65 năm Trường THPT Trưng Vương </a></h4>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="keen-slider__slide">
+                <div class="item">
+                   <div class="box_item">
+                      <a href=""><img src="assets/storage/app/uploads/public/3d3/64e/f8f/thumb__1350_330_0_0_exact.jpg"></a>
+                      <div class="title">
+                         <h4><a href=""> 65 năm Trường THPT Trưng Vương</a></h4>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="keen-slider__slide">
+                <div class="item">
+                   <div class="box_item">
+                      <a href=""><img src="assets/storage/app/uploads/public/3d3/64e/f8f/thumb__1350_330_0_0_exact.jpg"></a>
+                      <div class="title">
+                         <h4><a href=""> 65 năm Trường THPT Trưng Vương</a></h4>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="keen-slider__slide">
+                <div class="item">
+                   <div class="box_item">
+                      <a href=""><img src="assets/storage/app/uploads/public/3d3/64e/f8f/thumb__1350_330_0_0_exact.jpg"></a>
+                      <div class="title">
+                         <h4><a href=""> 65 năm Trường THPT Trưng Vương</a></h4>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       <!-- Sự kiện -->
+       <div class="container-fluid slide-pro" style="padding:0">
+          <div class="col-sm-12 col-xs-12 tieu-de" style="padding:5px 10px 15px">
+             <div class="pull-left"></div>
+             <h2><a href="#">Tin nổi bật</a></h2>
+             <div style="width: 100%;height: 1px;background-color: #f69679"></div>
+          </div>
+          <div class="col-sm-12 col-xs-12" style="padding: 0 10px;">
+             <div class="home-demo">
+                <div class="large-12 columns">
+                      <app-silde-header></app-silde-header>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- Hết sự kiện -->
+       <div class="container-fluid thong-bao" style="padding: 0">
+          <!-- Thông báo -->
+          <div class="col-sm-8 col-xs-12 right-one" style="padding:0">
+             <div class="col-sm-12 col-xs-12 tieu-de1" style="padding:0px 10px 15px">
+                <h2><a href="thong-bao.html">Thông báo</a></h2>
+                <div style="width: 100%;height: 1px;background-color: #00bff3"></div>
+             </div>
+             <div class="col-sm-12 col-xs-12" style="padding:0">
+                <div class="col-sm-6 col-xs-12" *ngFor="let tb of thongbaos">
+                   <a [routerLink]="['chi-tiet-tin-tuc',tb.maTin]"><img src="assets/img/{{tb.hinhAnh}}" width="362.33px" height="202.67px" style="width: 100%"></a>
+                   <h3 class="max-lines2"><a [routerLink]="['chi-tiet-tin-tuc',tb.maTin]">{{catText(tb.tieuDe, 100)}}</a></h3>
+                   <div style="width:50px;height:40px;background-color:rgba(255,255,255,0.8);position:absolute;top:0;right:10px;text-align:center;border-radius: 3px;">
+                      <div style="width:50px;height:15px;font-size:11px;background-color:#0A2343;color:#fff">
+                        {{ tb.thoiGian| date:'MM/yyyy'  }}
+                      </div>
+                      <div style="width:50px; height:25px;font-size:20px;line-height:25px;color:#0A2343">
+                         <b>{{ tb.thoiGian| date:'dd'  }}</b>
+                      </div>
+                   </div>
+                </div>
+                <!-- <div class="col-sm-6 col-xs-12">
+                   <a href="post/lich-kiem-tra-hk2-nam-hoc-2020-2021.html"><img src="assets/storage/app/uploads/public/607/6a1/89d/thumb_1056_441_246_0_0_crop.jpg" title="Lịch kiểm tra HK2 năm học 2020-2021" alt="Lịch kiểm tra HK2 năm học 2020-2021" style="width: 100%"></a>
+                   <h3 class="max-lines2"><a href="post/lich-kiem-tra-hk2-nam-hoc-2020-2021.html">Lịch kiểm tra HK2 năm học 2020-2021</a></h3>
+                   <div style="width:50px;height:40px;background-color:rgba(255,255,255,0.8);position:absolute;top:0;right:10px;text-align:center;border-radius: 3px;">
+                      <div style="width:50px;height:15px;font-size:11px;background-color:#0A2343;color:#fff">
+                         Apr/2021
+                      </div>
+                      <div style="width:50px; height:25px;font-size:20px;line-height:25px;color:#0A2343">
+                         <b>05</b>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                   <a href="post/huong-dan-tap-kiem-tra-giua-hk2-nam-hoc-2020-2021.html"><img src="assets/storage/app/uploads/public/604/831/f30/thumb_1039_441_246_0_0_crop.jpg" title="Hướng dẫn ôn tập kiểm tra giữa HK2 năm học 2020-2021" alt="Hướng dẫn ôn tập kiểm tra giữa HK2 năm học 2020-2021" style="width: 100%"></a>
+                   <h3 class="max-lines2"><a href="post/huong-dan-tap-kiem-tra-giua-hk2-nam-hoc-2020-2021.html">Hướng dẫn ôn tập kiểm tra giữa HK2 năm học 2020-2021</a></h3>
+                   <div style="width:50px;height:40px;background-color:rgba(255,255,255,0.8);position:absolute;top:0;right:10px;text-align:center;border-radius: 3px;">
+                      <div style="width:50px;height:15px;font-size:11px;background-color:#0A2343;color:#fff">
+                         Mar/2021
+                      </div>
+                      <div style="width:50px; height:25px;font-size:20px;line-height:25px;color:#0A2343">
+                         <b>09</b>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                   <a href="post/huong-dan-su-dung-ung-dung-toan-covid-19.html"><img src="assets/storage/app/uploads/public/603/86f/def/thumb_1031_441_246_0_0_crop.png" title="Hướng dẫn sử dụng ứng dụng &quot;An toàn Covid - 19&quot;" alt="Hướng dẫn sử dụng ứng dụng &quot;An toàn Covid - 19&quot;" style="width: 100%"></a>
+                   <h3 class="max-lines2"><a href="post/huong-dan-su-dung-ung-dung-toan-covid-19.html">Hướng dẫn sử dụng ứng dụng &quot;An toàn Covid - 19&quot;</a></h3>
+                   <div style="width:50px;height:40px;background-color:rgba(255,255,255,0.8);position:absolute;top:0;right:10px;text-align:center;border-radius: 3px;">
+                      <div style="width:50px;height:15px;font-size:11px;background-color:#0A2343;color:#fff">
+                         Feb/2021
+                      </div>
+                      <div style="width:50px; height:25px;font-size:20px;line-height:25px;color:#0A2343">
+                         <b>22</b>
+                      </div>
+                   </div>
+                </div> -->
+             </div>
+          </div>
+          <!-- Hết thông báo -->
+          <!-- Tin tức -->
+          <div class="col-sm-4 col-xs-12 left-one" style="padding:0">
+             <div class="col-sm-12 col-xs-12 tieu-de2" style="padding:5px 10px 15px">
+                <h2><a href="#">Tin tức</a></h2>
+                <div style="width: 100%;height: 1px;background-color: #1c356e"></div>
+             </div>
+             <div class="col-sm-12 col-xs-12 tong-tin" style="padding-left:15px">
+                <div class="row" *ngFor="let it of dstintuc">
+                   <div class="col-sm-12 col-xs-12" style="padding:10px 0">
+                      <div class="col-xs-2">
+                         <div style="width:70px;height:50px;background-color:rgba(100,100,100,0.1);text-align:center;border-radius: 3px;">
+                            <div style="width:70px;height:15px;font-size:11px;background-color:#0A2343;color:#fff;border-radius: 3px 3px 0 0;">
+                               Tháng {{ it.thoiGian| date:'MM'  }}
+                            </div>
+                            <div style="width:70px; height:35px;font-size:20px;line-height:35px;color:#0A2343">
+                               <b>{{ it.thoiGian| date:'dd'  }}</b>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-xs-10">
+                         <p class="max-lines3" style="padding-left:20px;"><a [routerLink]="['chi-tiet-tin-tuc',it.maTin]"> {{catText(it.tieuDe, 70)}}</a></p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <!-- Hết tin tức -->
+       </div>
+       <!-- Góc chia sẻ -->
+       <div class="container-fluid chia-se" style="padding:0">
+          <div class="col-sm-8 col-xs-12 left-two" style="padding: 0">
+             <div class="col-sm-12 col-xs-12 tieu-de3" style="padding:5px 10px 15px">
+                <h2><a href="#">Góc chia sẻ</a></h2>
+                <div style="width: 100%;height: 1px;background-color: #f26d7d"></div>
+             </div>
+             <div class="col-sm-12 col-xs-12" *ngFor="let it of chiases">
+                <div class="col-sm-5 col-xs-5" style="padding: 0;">
+                   <a [routerLink]="['/ctblog',it.maBaiViet]">
+                   <img src="assets/img/{{it.hinhAnh}}" width="311.09px" height="173.53px" style="width: 100%">
+                   </a>
+                   <div style="width:50px;height:40px;background-color:rgba(255,255,255,0.8);position:absolute;top:0;right:0;text-align:center;border-radius: 3px;">
+                      <div style="width:50px;height:15px;font-size:11px;background-color:#0A2343;color:#fff">
+                        {{ it.thoiGian| date:'MM/yyyy'  }}
+                      </div>
+                      <div style="width:50px; height:25px;font-size:20px;line-height:25px;color:#0A2343">
+                         <b>{{ it.thoiGian| date:'dd'  }}</b>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm-7 col-xs-7 share">
+                   <h4><a style="font-size: 16px;"[routerLink]="['/ctblog',it.maBaiViet]">{{catText(it.noiDung, 200)}}</a></h4>
+                   <p></p>
+                </div>
+             </div>
+          </div>
+          <div class="col-sm-4 col-xs-12 right-two" style="padding:0">
+             <div class="col-sm-12 col-xs-12 tieu-de4" style="padding:5px 10px 15px">
+                <h2><a href="album.html">Album ảnh</a></h2>
+                <div style="width: 100%;height: 1px;background-color: #acd373"></div>
+             </div>
+             <div class="col-sm-12 col-xs-12 slide-me" style="padding:0; overflow: hidden;">
+                <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 595px; height: 400px; overflow: hidden; ">
+                   <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 595px; height: 300px;
+                      overflow: hidden;">
+                      <div>
+                         <div id="sliderh1_container" class="sliderh1" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/1a0/thumb_946_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/1d6/thumb_947_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/316/thumb_949_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/345/thumb_950_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/846/thumb_952_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/86e/thumb_953_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/91a/thumb_954_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/b89/thumb_955_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca4/bda/thumb_956_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5fb/ca6/6bd/thumb_957_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5fb/ca4/116/thumb_945_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                      <div>
+                         <div id="sliderh2_container" class="sliderh2" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a93/cf9/thumb_902_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a93/d6b/thumb_903_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/28e/thumb_904_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/82f/thumb_905_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/865/thumb_906_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/8bc/thumb_907_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/d8f/thumb_908_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/db1/thumb_909_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/e43/thumb_910_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/eca/thumb_911_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5f7/a95/f36/thumb_912_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5f7/a93/c58/thumb_901_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                      <div>
+                         <div id="sliderh3_container" class="sliderh3" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/d94/thumb_454_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/dd4/thumb_455_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/dfc/thumb_456_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/eb9/thumb_457_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/f06/thumb_458_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/f2b/thumb_459_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/f5d/thumb_460_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/f8a/thumb_461_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/fb1/thumb_462_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12b/fd4/thumb_463_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12c/01e/thumb_464_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12c/05f/thumb_465_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12c/09b/thumb_466_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12c/266/thumb_468_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5de/12c/3ec/thumb_469_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5de/12b/cc2/thumb_453_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                      <div>
+                         <div id="sliderh4_container" class="sliderh4" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/40d/thumb_246_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/537/thumb_247_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/75e/thumb_249_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/a19/thumb_253_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/cda/thumb_254_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/e7a/thumb_256_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/f20/thumb_257_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bac/f79/thumb_258_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bad/1d9/thumb_259_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bad/3d1/thumb_261_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bad/427/thumb_262_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bad/4a0/thumb_263_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bad/548/thumb_264_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bad/6a0/thumb_265_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5bf/bad/80c/thumb_266_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                      <div>
+                         <div id="sliderh5_container" class="sliderh5" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/baa/fec/thumb_233_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/06e/thumb_234_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/124/thumb_235_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/17a/thumb_236_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/1e2/thumb_237_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/2d4/thumb_238_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/354/thumb_239_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/783/thumb_240_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/829/thumb_241_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/8dd/thumb_242_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/a1b/thumb_243_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/bab/a67/thumb_244_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5bf/ce2/471/thumb_268_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5bf/bab/b11/thumb_245_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                      <div>
+                         <div id="sliderh6_container" class="sliderh6" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/09b/e5a/thumb_147_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/09b/e8d/thumb_148_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/09b/ebd/thumb_149_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/09b/ef6/thumb_150_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/9d3/33c/thumb_169_368_192_0_0_crop.png"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/9d3/399/thumb_170_368_192_0_0_crop.png"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/9d3/ff0/thumb_171_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/9d4/0ba/thumb_172_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/9d4/205/thumb_173_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/9d4/2b7/thumb_174_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5b9/a74/52d/thumb_178_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                      <div>
+                         <div id="sliderh7_container" class="sliderh7" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/0a0/8ce/thumb_152_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/0a0/cc9/thumb_153_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/0a0/daf/thumb_154_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b9/0a0/f18/thumb_155_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5b9/0a0/7fb/thumb_151_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                      <div>
+                         <div id="sliderh8_container" class="sliderh8" style="position: relative; top: 0px; left: 0px; width: 500px;
+                            height: 300px;">
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 565px; height: 300px;
+                               overflow: hidden;">
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b4/41d/96d/thumb_34_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b4/41d/972/thumb_35_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b4/41d/976/thumb_36_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b4/41d/97a/thumb_37_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b4/41d/97d/thumb_38_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b4/41d/982/thumb_39_368_192_0_0_crop.jpg"/>
+                               </div>
+                               <div>
+                                  <img data-u="image" alt="" src="assets/storage/app/uploads/public/5b4/41d/990/thumb_40_368_192_0_0_crop.jpg"/>
+                               </div>
+                            </div>
+                            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                               <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                  <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                     <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                  </svg>
+                               </div>
+                            </div>
+                         </div>
+                         <div data-u="thumb">
+                            <img alt="" src="assets/storage/app/uploads/public/5b4/41d/8ab/thumb_33_108_51_0_0_crop.jpg" style="width: 166px;"/>
+                         </div>
+                      </div>
+                   </div>
+                   <div data-u="thumbnavigator" class="jssort16" style="left: 0px; bottom: 0px;margin-top:15px;">
+                      <div data-u="slides" style="cursor: default;">
+                         <div data-u="prototype" class=p>
+                            <div data-u="thumbnailtemplate" class="t"></div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- Góc chia sẻ -->
+    </div>
+ </section>

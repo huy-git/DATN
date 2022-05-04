@@ -1,0 +1,118 @@
+<section>
+    <div class="container tin-chinh blog" style="background-color: #fff;">
+        <div class="col-sm-12 col-xs-12 tieu-de-blog">
+            <h2><a [routerLink]="['/']">Trang chủ</a> / Quản lý bài viết</h2>
+        </div>
+        <div class="col-sm-12 col-xs-12" style="padding:0">
+            <div class="col-sm-12 col-xs-12 bai-viet" style="border-right: 1px solid #eee">
+                <h2 style="margin-top: 0">Danh sách bài viết</h2>
+                <hr>
+                <div class="content">
+                    <h4><button title="Xem bài viết" class="btn btn btn-success" (click)="createModal()">
+                        <i class="ace-icon fa fa-plus-square-o"></i>&ensp;Thêm bài viết
+                      </button></h4>
+                    <table class="table table-bordered text-center mb-4">
+                    <thead>
+                        <tr >
+                            <th style="text-align: center !important;">STT</th>
+                            <th style="text-align: center !important;">Tiêu đề</th>
+                            <th style="text-align: center !important;">Nội dung</th>
+                            <th style="text-align: center !important;">Hình ảnh</th>
+                            <th style="text-align: center !important;">Thời gian</th>
+                            <th style="text-align: center !important;">Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let item of baiviets, let i = index">
+                            <tr>
+                              <td>{{i+1}}</td>
+                                <td width="250" style="text-align: left;">{{catText(item.tieuDe, 50)}}</td>
+                                <td width="450" style="text-align: left;">{{catText(item.noiDung, 140)}}</td>
+                                <td><img src="assets/img/{{ item.hinhAnh }}" height="60px" width="60px"></td>
+                                <td>{{ item.thoiGian | date:'dd-MM-yyyy' }}</td>
+                                <td class="action-col" >
+                                    <div class="btn-group">
+                                        <button title="Xem bài viết" class="btn btn btn-info" [routerLink]="['/ctblog',item.maBaiViet]">
+                                            <i class="ace-icon fa fa-bookmark"></i>
+                                          </button>
+                                        <button title="Xóa bài viết" class="btn btn btn-danger"(click)="onDelete(item)">
+                                            <i class="ace-icon fa fa-trash"></i>
+                                        </button>
+                                    </div>  
+                                </td>
+                            </tr>
+                          </ng-container>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div *ngIf="showUpdateModalBaiViet" id="createBaiVietModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg full-height-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Nhập thông tin bài viết</h4>
+        </div>
+        <form *ngIf="doneSetupFormBaiViet" [formGroup]="formBaiViet"  (ngSubmit)="onSubmit(formBaiViet.value)" class="form-horizontal utehy-form">
+          <div class="modal-body no-padding">
+            <div class="row">
+                <div class="col-6">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Tiêu đề (*):</label>
+                        <div class="col-sm-8">
+                            <input type="text" formControlName="tieude" class="form-control">
+                        </div>
+                    </div>
+                    <div *ngIf=" submitted && f.tieude.errors" class="row invalid-feedback" style="margin-top: 0;">
+                        <div class="col-sm-3"></div>
+                        <div *ngIf="f.username.errors.required" class="col-sm-8">Chưa nhập tiêu đề!</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                   <div class="form-group">
+                    <label class="control-label col-sm-3">Hình ảnh (*):</label>
+                      <div  class="col-sm-8">
+                        <input type="file" formControlName="hinhanh" accept="image/*" class="form-control">
+                        <!-- <p-fileUpload #file_image mode="advanced" [showUploadButton]="false" cancelLabel="Hủy" chooseLabel ="Chọn ảnh"   multiple="false" accept="image/*" maxFileSize="1000000">
+                          <ng-template pTemplate="content">
+                              <img *ngIf="baiviet && baiviet.hinhAnh" style="height: 100px;width: 100px;" [src]="baiviet.hinhAnh">
+                          </ng-template>
+                        </p-fileUpload> -->
+                      </div>
+                   </div>
+                </div>
+                <div class="col-6">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Nội dung (*):</label>
+                        <div class="col-sm-8">
+                            <textarea formControlName="noidung" name="textarea-input" id="textarea-input" rows="9" placeholder="Nội dung ..." class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div *ngIf=" submitted && f.noidung.errors" class="row invalid-feedback" style="margin-top: 0;">
+                        <div class="col-sm-3"></div>
+                        <div *ngIf="f.noidung.errors.required" class="col-sm-8">Chưa nhập nội dung!</div>
+                    </div>
+               </div>
+             </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-sm" (click)="Reset()">
+            <i class="fa fa-bell"></i> Làm mới
+          </button>
+          <button type="submit" class="btn btn-success btn-sm btn-submit">
+            <i class="fa fa-save"></i> Đồng ý
+          </button>
+          <button type="button" class="btn btn-default btn-sm" (click)="closeModal()">
+            <i class="fa fa-times"></i> Đóng lại
+          </button>
+        </div>
+      </form>  
+      </div>
+    </div>
+  </div>
+  
+  
